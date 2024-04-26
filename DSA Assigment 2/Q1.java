@@ -1,3 +1,13 @@
+/*
+ Define a class Person with two instance variables:
+name and age
+and two member methods:
+setData(): set the details of the person.
+displayData(): display the details of the person.
+Now, create two objects of class person and initialize one object value directly(by using the dot(.) operator name: “Rohan” and age: 20 ). Accept your name and age through the keyboard and set them to another object using the setData() method.
+Now display both the member variables using the displayData() method. Also, check who is younger.
+ */
+
 import java.util.*;
 
 class person{
