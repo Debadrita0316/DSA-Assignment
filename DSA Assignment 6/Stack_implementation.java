@@ -1,4 +1,5 @@
 /*
+Part 1
  A stack is implemented statically by using an array of size MAX to hold stack elements and an
 integer top storing the position of top of the stack. The stack elements can be integers, characters,
 strings or user defined data types.

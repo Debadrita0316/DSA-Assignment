@@ -1,4 +1,5 @@
 /*
+Part 2
 A stack is implemented dynamically by using a Linked list where each node in the linked list has
 two parts, the data element and the reference to the next element of the stack. The class
 defintion of Node is given below.
