@@ -14,7 +14,7 @@ class Box <T>{
     Box(T a ) {
         t = a;
     }
-    public void add(T t ){
+    public void set(T t ){
         this.t =t ;
     }
     public T get(){
@@ -23,24 +23,30 @@ class Box <T>{
 }
 public class Q4 {
     public static void main(String[] args) {
-        Box <String> sB1 = new Box <String> ("Welcome");
+        Box <String> sB1 = new Box <> ("Welcome");
         Box <String> sB2 = sB1;
-        System.out.println(sB2.get());
-        System.out.println("Hello");
-        System.out.println(sB2.get());
+        System.out.println("Before: "+ sB1.get());
+        System.out.println("Before: "+ sB2.get());
+        sB1.set("Hello");
+        System.out.println("After: "+ sB1.get());
+        System.out.println("After: "+ sB2.get());
 
-        Box<Integer> iB1 = new Box<Integer>(10);
+        Box<Integer> iB1 = new Box<>(10);
         Box <Integer> iB2 = iB1;
-        System.out.println(iB2.get());
-        iB1.add(20);
-        System.out.println(iB2.get());
+        System.out.println("Before: "+ iB1.get());
+        System.out.println("Before: "+ iB2.get());
+        iB1.set(20);
+        System.out.println("After: "+ iB1.get());
+        System.out.println("After: "+ iB2.get());
 
-        Box <Object> obj1 = new Box <Object> ("Hi");
+        Box <Object> obj1 = new Box <> ("Hi");
         Box <Object> obj2 = obj1 ;
-        System.out.println(obj2.get());
-        obj1.add(15);
-        System.out.println(obj2.get());
-        obj1.add("Hello");
-        System.out.println(obj2.get());
-    }
+        System.out.println("Before: "+ obj1.get());
+        System.out.println("Before: "+ obj2.get());
+        obj1.set(15);
+        System.out.println("After: "+ obj1.get());
+        System.out.println("After: "+ obj2.get());
+        obj1.set("Hello");
+        System.out.println("After: "+ obj1.get());
+        System.out.println("After: "+ obj2.get());    }
 }
