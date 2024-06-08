@@ -46,239 +46,118 @@ g)  Displaying all the nodes in the list
 */
 
 import java.util.*;
-
-
-
 class Node {
-
     protected int regd_no;
-
     protected float mark;
-
     protected Node next;
-
 }
 
 public class SingleLinkedList {
-
     public static Node start = null;
-
-
-
     public static Node create(Node start) 
-
     {
-
         Scanner sc = new Scanner(System.in);
-
         Node q = null;
-
         char ch;
-
-
-
         do {
-
             Node p = new Node();
-
             System.out.println("Enter the registration number:");
-
             p.regd_no = sc.nextInt();
-
             System.out.println("Enter your marks:");
-
             p.mark = sc.nextFloat();
-
             p.next = null; // ensure the next pointer is null
-
-
-
             if (start == null) {
-
                 start = p;
-
                 q = p;
-
             } else {
-
                 q.next = p;
-
                 q = p;
-
             }
-
             System.out.println("Do you want to create another node in the linked list? (Y/N)");
-
             ch = sc.next().charAt(0);
-
         } while (ch == 'y' || ch == 'Y');
-
-
-
         return start;
-
     }
-
     public static void display(Node start) 
-
    {
-
         Node p = start;
-
         if (start == null) {
-
             System.out.println("Empty LinkedList");
-
         } else {
-
             System.out.println("Registration no\tMarks");
-
             while (p != null) {
-
                 System.out.println(p.regd_no + "\t\t" + p.mark);
-
                 p = p.next;
-
             }
-
         }
-
     }
-
 
 
     public static Node InsBeg(Node start) 
-
     {
-
         Scanner sc = new Scanner(System.in);
-
         Node p = new Node();
-
         System.out.println("Enter the registration number:");
-
         p.regd_no = sc.nextInt();
-
         System.out.println("Enter your marks:");
-
         p.mark = sc.nextFloat();
-
         p.next = start;
-
         start = p;
-
         return start;
-
     }
-
-
 
     public static Node InsEnd(Node start) 
-
     {
-
         Scanner sc = new Scanner(System.in);
-
         Node p = new Node();
-
         System.out.println("Enter the registration number:");
-
         p.regd_no = sc.nextInt();
-
         System.out.println("Enter your marks:");
-
         p.mark = sc.nextFloat();
-
         p.next = null;
 
-
-
         if (start == null) {
-
             start = p;
-
         } else {
-
             Node q = start;
-
             while (q.next != null) {
-
                 q = q.next;
-
             }
-
             q.next = p;
-
         }
-
         return start;
-
     }
-
-
-
     public static Node InsAny(Node start) 
-
     {
-
         Scanner sc = new Scanner(System.in);
-
         Node p = new Node();
-
         System.out.println("Enter the registration number:");
-
         p.regd_no = sc.nextInt();
-
         System.out.println("Enter your marks:");
-
         p.mark = sc.nextFloat();
-
         System.out.println("Enter position of new Node:");
-
         int pos = sc.nextInt();
 
-
-
         if (pos <= 0) {
-
             System.out.println("Position does not exist");
-
         } else if (start == null || pos == 1) {
-
             p.next = start;
-
             start = p;
-
             System.out.println("Node added at first position");
-
         } else {
-
             Node q = start;
-
             for (int i = 1; i < pos - 1 && q.next != null; i++) {
-
                 q = q.next;
-
             }
-
             if (q.next == null) {
-
                 q.next = p;
-
                 p.next = null;
-
                 System.out.println("Position not found, so new Node is added to last:");
-
             } else {
-
                 p.next = q.next;
-
                 q.next = p;
-
                 System.out.println("New Node added to position " + pos);
-
             }
-
         }
 
         return start;
